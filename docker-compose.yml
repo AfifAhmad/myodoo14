@@ -1,0 +1,11 @@
+version: '3'
+services:
+  web:
+    image: "gondeze/myodoo14:start"
+    user: "odoo14"
+    working_dir: "/var/www/apps/odoo14"
+    ports:
+      - "8069:8069"
+    volumes:
+      - ".:/var/www/apps/odoo14"
+    command: "pipenv run python3.9 odoo-bin -c odoo.conf"
